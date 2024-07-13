@@ -1,7 +1,7 @@
 package data;
 
 public class Book {
-    private String name;
+    private final String name;
     private String id;
     private int copies;
     private String author;
