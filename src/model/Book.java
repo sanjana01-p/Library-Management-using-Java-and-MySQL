@@ -1,22 +1,59 @@
-package data;
+package model;
 
 public class Book {
-    private final String name;
-    private String id;
-    private int copies;
+    private String name;
+    private int id;
     private String author;
+    private boolean isAvailable;
 
-    public Book(String name, String id, int copies, String author) {
-        this.name = name;
+    public Book() {}
+    public Book(int id, String name, String author, boolean isAvailable) {
         this.id = id;
-        this.copies = copies;
+        this.name = name;
+        this. author = author;
+        this.isAvailable = isAvailable;
+    }
+
+    public boolean isAvailable() {
+        return isAvailable;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
+    public void setAuthor(String author) {
         this.author = author;
     }
 
-    public void showBook() {
-        System.out.println("Name: " + name);
-        System.out.println("Id: " + id);
-        System.out.println("Copies available: " + copies);
-        System.out.println("Author: " + author);
+    public void setAvailable(boolean available) {
+        isAvailable = available;
     }
+
+    public void checkOut() {
+        isAvailable = false;
+    }
+
+    public void returnBook() {
+        isAvailable = true;
+    }
+
 }
